@@ -1,0 +1,8 @@
+10. Postlab
+10.1.1. data_ready must be asserted for 2 clock cycles. The data must remain valid for 3 clock cycles, 2 to sync and 1 to store.
+
+10.2.1. The image is much darker, and white streaks are now faded streaks in a light violet/purple  color, with the edges showing due to its nature as a high pass filter. It works as expected, and the image seems to be smoothened post filter.
+
+10.2.2. IO Syntax: FUNCTION(INPUT, format_spec, OUTPUT)
+
+10.2.3. Format Specifiers: %s = string, %i = integer, %c = character, %d = decimal

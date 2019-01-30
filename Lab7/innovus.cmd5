@@ -1,0 +1,274 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Thu Mar  2 14:40:24 2017                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v16.12-s051_1 (64bit) 08/17/2016 12:18 (Linux 2.6.18-194.el5)
+#@(#)CDS: NanoRoute 16.12-s051_1 NR160816-1350/16_12-UB (database version 2.30, 347.6.1) {superthreading v1.30}
+#@(#)CDS: AAE 16.12-s026 (64bit) 08/17/2016 (Linux 2.6.18-194.el5)
+#@(#)CDS: CTE 16.12-s023_1 () Aug 12 2016 01:35:46 ( )
+#@(#)CDS: SYNTECH 16.12-s009_1 () Aug 11 2016 01:33:09 ( )
+#@(#)CDS: CPE v16.12-s054
+#@(#)CDS: IQRC/TQRC 15.2.4-s467 (64bit) Wed Jul 20 17:12:38 PDT 2016 (Linux 2.6.18-194.el5)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getDrawView
+loadWorkspace -name Physical
+win
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getDrawView
+loadWorkspace -name Physical
+win
+set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+set conf_qxconf_file NULL
+set conf_qxlib_file NULL
+set defHierChar /
+set delaycal_input_transition_delay 0.1ps
+set distributed_client_message_echo 1
+set distributed_mmmc_disable_reports_auto_redirection 0
+set floorplan_default_site core
+set fpIsMaxIoHeight 0
+set init_gnd_net gnd
+set init_io_file innovus.io
+set init_lef_file {/package/eda/cells/OSU/v2.7/cadence/lib/ami05/lib/osu05_stdcells.lef /package/eda/cells/OSU/v2.7/cadence/lib/ami05/lib/osu05_stdcells.stacks.lef}
+set init_mmmc_file osu05_MMMC.view
+set init_oa_search_lib {}
+set init_pwr_net vdd
+set init_verilog mapped/lab7_layout_design.v
+set latch_time_borrow_mode max_borrow
+set pegDefaultResScaleFactor 1
+set pegDetailResScaleFactor 1
+set report_inactive_arcs_format {from to when arc_type sense reason}
+set timing_library_ccs_noise_vin_clip_points {}
+set timing_library_ccs_noise_vout_clip_points {}
+set timing_library_load_pin_cap_indices {}
+set timing_library_write_library_to_directory {}
+set tso_post_client_restore_command {update_timing ; write_eco_opt_db ;}
+init_design
+floorPlan -r 1.0 0.6 50 50 50 50
+unfixAllIos
+legalizePin
+addRing -spacing_bottom 9.9 -width_left 9.9 -width_bottom 9.9 -width_top 9.9 -spacing_top 9.9 -layer_bottom metal1 -width_right 9.9 -around default_power_domain -center 1 -layer_top metal1 -spacing_right 9.9 -spacing_left 9.9 -layer_right metal2 -layer_left metal2 -offset 9.9 -nets { gnd vdd }
+setPlaceMode -congEffort medium
+placeDesign -inPlaceOpt
+checkPlace
+sroute
+trialRoute
+timeDesign -preCTS
+setOptMode -yieldEffort none
+setOptMode -highEffort
+setOptMode -maxDensity 0.95
+setOptMode -drcMargin 0.0
+setOptMode -holdTargetSlack 0.0 -setupTargetSlack 0.0
+setOptMode -noSimplifyNetlist
+optDesign -preCTS -drv
+clockDesign
+trialRoute
+timeDesign -postCTS
+setExtractRCMode -assumeMetFill
+extractRC -outfile encounter.cap
+setOptMode -yieldEffort none
+setOptMode -highEffort
+setOptMode -maxDensity 0.95
+setOptMode -drcMargin 0.0
+setOptMode -holdTargetSlack 0.0 -setupTargetSlack 0.0
+setOptMode -noSimplifyNetlist
+optDesign -postCTS -hold
+optDesign -postCTS -drv
+all_hold_analysis_views
+all_setup_analysis_views
+getPlaceMode -doneQuickCTS -quiet
+addFiller -cell FILL
+setMetalFill -layer {1 2 3} -preferredDensity 35 -gapSpacing 0.2 -minWidth 0.1 -maxWidth 1.0 -minLength 0.1 -maxLength 10.0
+globalNetConnect vdd -type tiehi
+globalNetConnect vdd -type pgpin -pin vdd -all -override
+globalNetConnect gnd -type tielo
+globalNetConnect gnd -type pgpin -pin gnd -all -override
+sroute
+globalDetailRoute
+setExtractRCMode -engine postRoute -effortLevel low -reduce 0.0
+extractRC
+setAnalysisMode -analysisType onChipVariation
+setOptMode -yieldEffort none
+setOptMode -effort high
+setOptMode -maxDensity 0.95
+setOptMode -drcMargin 0.0
+setOptMode -holdTargetSlack 0.0 -setupTargetSlack 0.0
+setOptMode -simplifyNetlist false
+setOptMode -usefulSkew false
+optDesign -postRoute -incr
+addFiller -cell FILL -prefix FIL -fillBoundary
+ecoRoute
+verifyConnectivity -type all -error 1000 -warning 50
+verify_drc
+streamOut final.gds2 -mapFile gds2_innovus.map -outputMacros -stripes 1 -units 1000 -mode ALL
+saveNetlist -excludeLeafCell final.v
+rcOut -spf final.dspf
+fit
+zoomIn
+gui_select -rect {630.570 882.136 671.227 850.513}
+gui_select -rect {610.806 923.922 609.677 931.263}
+gui_select -rect {601.771 954.979 728.260 856.725}
+gui_select -rect {590.477 796.869 786.422 708.778}
+gui_select -rect {836.114 867.454 891.453 793.480}
+gui_select -rect {694.944 815.503 725.436 794.610}
+gui_select -rect {622.100 940.862 827.644 782.752}
+fit
+deselectAll
+selectInst FILLER_1183
+deselectAll
+selectWire 711.6000 751.0500 721.6500 751.9500 1 I0/LD/T_FIFO/IP_FIFO/UFIFORAM/n207
+deselectAll
+selectInst I0/LD/T_SR_0/U21
+gui_select -rect {530.621 987.166 757.623 722.895}
+gui_select -rect {857.572 782.187 945.662 624.641}
+gui_select -rect {889.759 865.195 921.946 841.478}
+gui_select -rect {674.615 690.708 711.884 670.380}
+gui_select -rect {669.533 783.881 686.474 751.694}
+gui_select -rect {752.541 719.507 767.788 705.955}
+deselectAll
+selectInst FILLER_1859
+gui_select -rect {815.221 668.686 830.467 661.910}
+gui_select -rect {860.960 648.357 884.677 626.335}
+gui_select -rect {444.225 932.957 679.697 678.850}
+gui_select -rect {-324.871 1307.341 849.102 799.127}
+deselectAll
+gui_select -rect {223.999 1026.129 603.465 727.977}
+gui_select -rect {-108.034 1015.965 396.792 816.068}
+gui_select -rect {-109.728 882.136 191.812 707.649}
+deselectAll
+selectInst G1
+deselectAll
+selectInst P1
+deselectAll
+selectInst FW3
+gui_select -rect {-138.526 829.620 268.044 755.082}
+gui_select -rect {-119.892 899.076 254.492 827.926}
+gui_select -rect {-52.130 975.308 301.925 753.388}
+gui_select -rect {7.161 743.224 278.209 426.437}
+gui_select -rect {-174.101 1181.982 281.597 319.713}
+gui_select -rect {-26.719 1139.630 540.786 214.682}
+gui_select -rect {-133.444 1009.189 290.067 545.021}
+deselectAll
+selectInst FW3
+deselectAll
+selectInst P1
+deselectAll
+selectInst G1
+deselectAll
+selectWire 330.1500 330.4500 1169.8500 340.3500 1 gnd
+deselectAll
+selectInst FILLER_489
+deselectAll
+selectInst {I0/LD/T_FIFO/IP_FIFO/UFIFORAM/fiforeg_reg[7][6]}
+deselectAll
+selectInst I0/LD/T_FIFO/IP_FIFO/UFIFORAM/U69
+deselectAll
+selectWire 915.1500 830.5500 916.0500 844.9500 2 vdd
+deselectAll
+selectInst FILLER_2627
+deselectAll
+selectInst {I0/LD/T_FIFO/IP_FIFO/UFIFORAM/fiforeg_reg[3][7]}
+deselectAll
+selectInst FILLER_1634
+deselectAll
+selectInst {I0/LD/T_FIFO/IP_FIFO/UFIFORAM/fiforeg_reg[0][1]}
+deselectAll
+selectInst I0/LD/T_FIFO/IP_FIFO/UFIFORAM/FE_OFC24_n241
+gui_select -rect {867.736 624.641 952.439 548.409}
+gui_select -rect {771.176 680.544 915.170 580.595}
+gui_select -rect {662.757 816.068 891.453 648.357}
+gui_select -rect {622.100 1056.622 816.915 954.979}
+gui_select -rect {645.816 799.127 737.295 773.717}
+gui_select -rect {633.958 934.651 866.042 934.651}
+gui_select -rect {650.899 1005.801 935.498 958.368}
+gui_select -rect {517.069 700.873 898.229 628.029}
+gui_select -rect {947.357 843.172 1048.999 438.296}
+deselectAll
+selectInst I0/LD/CTRL/U86
+deselectAll
+verifyConnectivity -type all -noWeakConnect -noUnroutedNet -connLoop -noSoftPGConnect -error 1000 -warning 50
+verifyConnectivity -type all -noWeakConnect -noUnroutedNet -connLoop -noSoftPGConnect -error 1000 -warning 50
+verifyConnectivity -type all -noOpen -noAntenna -noWeakConnect -noUnConnPin -noUnroutedNet -geomConnect -noSoftPGConnect -error 1000 -warning 50
+verifyConnectivity -type all -noOpen -noAntenna -noWeakConnect -noUnConnPin -noUnroutedNet -geomConnect -noSoftPGConnect -error 1000 -warning 50
+gui_select -rect {537.398 970.226 683.085 833.008}
+gui_select -rect {637.346 714.425 728.825 639.887}
+gui_select -rect {737.295 890.606 923.640 816.068}
+gui_select -rect {864.348 716.119 901.617 617.864}
+gui_select -rect {949.051 726.283 1004.954 687.320}
+gui_select -rect {689.862 1053.234 882.983 951.591}
+gui_select -rect {608.547 712.731 728.825 606.006}
+gui_select -rect {759.317 539.938 842.326 480.647}
+gui_select -rect {613.630 487.423 708.496 441.684}
+gui_select -rect {518.763 499.281 727.131 445.072}
+gui_select -rect {530.621 1056.622 923.640 948.203}
+setLayerPreference M3 -color #75c1d0
+deselectAll
+setLayerPreference M0 -color #42f4a4
+gui_select -rect {850.796 712.731 811.833 560.267}
+gui_select -rect {554.338 824.538 832.161 668.686}
+gui_select -rect {693.250 1043.070 886.371 910.934}
+gui_select -rect {686.474 600.924 893.147 533.162}
+deselectAll
+selectInst I0/LD/T_FIFO/IP_FIFO/UFIFORAM/U69
+gui_select -rect {608.547 902.464 920.252 668.686}
+gui_select -rect {-113.116 1500.462 1482.675 107.957}
+deselectAll
+gui_select -rect {-274.050 1419.148 1768.968 473.871}
+deselectAll
+setLayerPreference M3 -color #1013d0
+setLayerPreference M1 -color #fff234
+setLayerPreference M1 -color #75ff81
+gui_select -rect {713.578 953.285 898.229 660.216}
+gui_select -rect {534.009 702.567 845.714 619.559}
+deselectAll
+setLayerPreference M1 -color #ff199b
+setLayerPreference M1 -color #1e17ff
+setLayerPreference M1 -color #7aff3d
+setLayerPreference M0 -color #182ef4
+selectInst G1
+deselectAll
+selectInst G1
+deselectAll
+selectInst G1
+deselectAll
+selectInst P1
+deselectAll
+fit
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet
+getCTSMode -engine -quiet

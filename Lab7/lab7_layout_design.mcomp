@@ -1,0 +1,24 @@
+QuestaSim-64 vlog 10.3b Compiler 2014.05 May 29 2014
+Start time: 18:11:36 on Mar 08,2017
+vlog -sv -work mapped_work mapped/lab7_layout_design.v 
+-- Compiling module lab7_out_ctrl
+-- Compiling module lab7_encoder
+-- Compiling module lab7_tx_sr_1
+-- Compiling module lab7_tx_sr_0
+-- Compiling module fiforam
+-- Compiling module write_ptr
+-- Compiling module write_fifo_ctrl
+-- Compiling module read_ptr
+-- Compiling module read_fifo_ctrl
+-- Compiling module fifo
+-- Compiling module lab7_tx_fifo
+-- Compiling module lab7_timer
+-- Compiling module lab7_tcu
+-- Compiling module lab7_usb_transmitter
+-- Compiling module lab7_layout_design_t
+-- Compiling module lab7_layout_design
+
+Top level modules:
+	lab7_layout_design
+End time: 18:11:36 on Mar 08,2017, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

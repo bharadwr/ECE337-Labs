@@ -1,0 +1,210 @@
+
+********************************************************************************
+Product   : Virtuoso(R) STREAM In
+Program   : @(#)$CDS: pipo.exe version 5.1.0 11/22/2011 01:41 (cicln04) $
+SubVersion: sub-version 5.10.41.500.6.151
+Started at: 25-Oct-2017  16:24:48
+User Name : mg101
+Host Name : ecegrid-thin4.ecn.purdue.edu
+Directory : /home/ecegrid/a/mg101/ece337/Lab7
+CADENCE Design Systems, Inc.
+********************************************************************************
+
+Stream file   : /home/ecegrid/a/mg101/ece337/Lab7/final.gds2
+
+Reading Stream File ...
+VERSION      : 3
+MODIFICATION : Wed Mar  8 19:28:54 2017
+ACCESS       : Wed Mar  8 19:28:54 2017
+WARNING (158): Years in non-standard four-digit format encountered in the Stream file.
+GDS LIBRARY  : DesignLib
+U-UNIT/DBU   : 0.001000000000
+METRIC/DBU   : 0.000000001000
+
+TARGET LIBRARY PATH: /home/ecegrid/a/mg101/ece337/Lab7/My_Layout
+
+     1. scanning cellview (lab7_layout_design layout)
+     2. scanning cellview (m2_m1 layout)
+     3. scanning cellview (m3_m2 layout)
+     4. scanning cellview (lab7_layout_design_via0 layout)
+     5. scanning cellview (lab7_layout_design_via1 layout)
+     6. scanning cellview (padvdd layout)
+     7. scanning cellview (padnc layout)
+     8. scanning cellview (padout layout)
+     9. scanning cellview (padinc layout)
+    10. scanning cellview (padgnd layout)
+    11. scanning cellview (padfc layout)
+    12. scanning cellview (dffsr layout)
+    13. scanning cellview (xnor2x1 layout)
+    14. scanning cellview (mux2x1 layout)
+    15. scanning cellview (xor2x1 layout)
+    16. scanning cellview (or2x1 layout)
+    17. scanning cellview (oai22x1 layout)
+    18. scanning cellview (oai21x1 layout)
+    19. scanning cellview (nor2x1 layout)
+    20. scanning cellview (nand3x1 layout)
+    21. scanning cellview (nand2x1 layout)
+    22. scanning cellview (invx4 layout)
+    23. scanning cellview (invx2 layout)
+    24. scanning cellview (invx1 layout)
+    25. scanning cellview (dffposx1 layout)
+    26. scanning cellview (bufx4 layout)
+    27. scanning cellview (bufx2 layout)
+    28. scanning cellview (aoi22x1 layout)
+    29. scanning cellview (aoi21x1 layout)
+    30. scanning cellview (and2x1 layout)
+    31. scanning cellview (fill layout)
+
+PASS 2...
+WARNING (69): Failed to open the technology file `techfile.cds' from the library `NCSU_TechLib_ami06' in the append mode. Undefined layer-purpose pairs will not be translated.
+     1. translating cellview (lab7_layout_design_via1 layout)
+     2. translating cellview (lab7_layout_design_via0 layout)
+     3. translating cellview (m3_m2 layout)
+     4. translating cellview (m2_m1 layout)
+     5. translating cellview (fill layout)
+     6. translating cellview (padfc layout)
+     7. translating cellview (padgnd layout)
+     8. translating cellview (padvdd layout)
+     9. translating cellview (padnc layout)
+    10. translating cellview (padinc layout)
+    11. translating cellview (padout layout)
+    12. translating cellview (and2x1 layout)
+    13. translating cellview (oai22x1 layout)
+    14. translating cellview (invx4 layout)
+    15. translating cellview (xor2x1 layout)
+    16. translating cellview (nand3x1 layout)
+    17. translating cellview (or2x1 layout)
+    18. translating cellview (dffposx1 layout)
+    19. translating cellview (bufx4 layout)
+    20. translating cellview (invx2 layout)
+    21. translating cellview (aoi21x1 layout)
+    22. translating cellview (aoi22x1 layout)
+    23. translating cellview (oai21x1 layout)
+    24. translating cellview (xnor2x1 layout)
+    25. translating cellview (nand2x1 layout)
+    26. translating cellview (invx1 layout)
+    27. translating cellview (mux2x1 layout)
+    28. translating cellview (nor2x1 layout)
+    29. translating cellview (dffsr layout)
+    30. translating cellview (bufx2 layout)
+    31. translating cellview (lab7_layout_design layout)
+
+			Individual Cell Statistics
+
+CellView          Rectangles Polygons   Paths Ellipses Labels Instances Arrays  Dots
+************************************************************************************
+lab7_layout_design/l  103558        0    7329       0      18   11229       0      0
+bufx2/layout -- (empty cell view, not deleted).
+dffsr/layout -- (empty cell view, not deleted).
+nor2x1/layout -- (empty cell view, not deleted).
+mux2x1/layout -- (empty cell view, not deleted).
+invx1/layout -- (empty cell view, not deleted).
+nand2x1/layout -- (empty cell view, not deleted).
+xnor2x1/layout -- (empty cell view, not deleted).
+oai21x1/layout -- (empty cell view, not deleted).
+aoi22x1/layout -- (empty cell view, not deleted).
+aoi21x1/layout -- (empty cell view, not deleted).
+invx2/layout -- (empty cell view, not deleted).
+bufx4/layout -- (empty cell view, not deleted).
+dffposx1/layout -- (empty cell view, not deleted).
+or2x1/layout -- (empty cell view, not deleted).
+nand3x1/layout -- (empty cell view, not deleted).
+xor2x1/layout -- (empty cell view, not deleted).
+invx4/layout -- (empty cell view, not deleted).
+oai22x1/layout -- (empty cell view, not deleted).
+and2x1/layout -- (empty cell view, not deleted).
+padout/layout -- (empty cell view, not deleted).
+padinc/layout -- (empty cell view, not deleted).
+padnc/layout -- (empty cell view, not deleted).
+padvdd/layout -- (empty cell view, not deleted).
+padgnd/layout -- (empty cell view, not deleted).
+padfc/layout -- (empty cell view, not deleted).
+fill/layout -- (empty cell view, not deleted).
+m2_m1/layout               3        0       0       0       0       0       0      0
+m3_m2/layout               3        0       0       0       0       0       0      0
+lab7_layout_design_v      38        0       0       0       0       0       0      0
+lab7_layout_design_v       8        0       0       0       0       0       0      0
+
+
+                    Statistics Of Layers
+
+
+Cadence    Cadence    Stream   Stream
+ Layer     Purpose    Layer   Datatype Rectangles Polygons Paths   Ellipses   Labels   Dots
+--------------------------------------------------------------------------------------------
+metal3     drawing    62        0         26470    0        1946     0        16       0       
+metal1     drawing    49        0         31026    0        1431     0        0        0       
+metal2     drawing    51        0         46070    0        3952     0        2        0       
+via2       drawing    61        0         1        0        0        0        0        0       
+via        drawing    50        0         43       0        0        0        0        0       
+
+
+   Summary Of Objects
+
+------------------------
+  103610 Rectangles
+       0 Polygons
+    7329 Paths
+       0 Ellipses
+      18 Labels
+   11229 Instances
+       0 Arrays
+      31 Cells
+       0 Dots
+
+
+00:00:01 Elapsed time
+00:00:01 CPU time
+
+    7678 Kbytes of memory
+
+*** There were 0 error and 2 warning messages ***
+
+The setup file's contents :
+
+streamInKeys = list(nil
+	'runDir			"."
+	'inFile			"/home/ecegrid/a/mg101/ece337/Lab7/final.gds2"
+	'primaryCell		""
+	'libName		"My_Layout"
+	'techfileName		""
+	'scale			0.001000
+	'units			"micron"
+	'errFile		"PIPO.LOG"
+	'refLib			nil
+	'hierDepth		20
+	'maxVertices		1024
+	'checkPolygon		t
+	'snapToGrid		nil
+	'arrayToSimMosaic	t
+	'caseSensitivity	"lower"
+	'textCaseSensitivity	"preserve"
+	'zeroPathToLine		"lines"
+	'convertNode		"ignore"
+	'keepPcell	nil
+	'replaceBusBitChar	nil
+	'skipUndefinedLPP	nil
+	'ignoreBox		nil
+	'mergeUndefPurposToDrawing		nil
+	'reportPrecision	nil
+	'keepStreamCells		nil
+	'attachTechfileOfLib		""
+	'runQuiet		nil
+	'noWriteExistCell		t
+	'NOUnmappingLayerWarning		nil
+	'comprehensiveLog		nil
+	'ignorePcellEvalFail		nil
+	'appendDB		nil
+	'genListHier		nil
+	'skipDbLocking		nil
+	'skipPcdbGen		nil
+	'cellMapTable		""
+	'layerTable		""
+	'textFontTable		""
+	'restorePin		0
+	'propMapTable		""
+	'propSeparator		","
+	'userSkillFile		""
+	'rodDir			""
+	'refLibOrder			""
+)
